@@ -1,11 +1,18 @@
 from unittest import result
+from matplotlib.backend_bases import key_press_handler
 import streamlit as st
+import wbgapi as wb
 from Api import *
 from secrets import choice
 import pandas as pd
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from client import lifexp,lifexpe,lifexpa,lifexpaf,lifexpo
+from client import BMU,CRI,BRB1,PIR,CHL,VIR
+from client import SYC,DZA,MAR,TUN,MUS,CPV
+from client import MLT,SWE,ESP,ITA,IRL,FRA
+from client import MDV,LKA,BGD,BTN,NPL,IND
+from client import CHI,HKG,KOR,MAC,SGP,JPN
 #API IMPORT -------------------------------------------------------------------------------------------------------------------
 ## Adolescent fertility rate (births per 1,000 women ages 15-19)
 from Api import AfrAFR,AfrCLA,AfrEUU,AfrSAS,AfrWLD
@@ -15,8 +22,6 @@ from Api import AfrAFR,AfrCLA,AfrEUU,AfrSAS,AfrWLD
 from Api import BashAFR,BashCLA,BashEUU,BashSAS,BashWLD
 ## Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)
 from Api import CodpnAFR,CodpnCLA,CodpnEUU,CodpnSAS,CodpnWLD
-## Capital health expenditure (% of GDP)
-from Api import CheAFR,CheCLA,CheEUU,CheSAS,CheWLD
 ## Current health expenditure (% of GDP)
 from Api import CuheAFR,CuheCLA,CuheEUU,CuheSAS,CuheWLD
 ## Current health expenditure per capita (current US$)
@@ -57,12 +62,117 @@ from Api import SmrmAFR,SmrmCLA,SmrmEUU,SmrmSAS,SmrmWLD
 from Api import WfrAFR,WfrCLA,WfrEUU,WfrSAS,WfrWLD
 #API IMPORT -------------------------------------------------------------------------------------------------------------------
 def main():
-    menu = ["Life Expectancy-Test","Dataset-Test","Info","Datasets"]
-    choice = st.sidebar.selectbox("Menu",menu)
+    casa=["Off","Datasets"]
+    choice = st.sidebar.selectbox("(Semana 2)",casa)
+    if choice == "Off":
+      st.title(" ")
+    if choice == "Datasets":
+         st.title(" ")
+         st.subheader("Datasets")
+         #----------------------------------------------------------------------------------------------------------------------
+         with st.form(key="searchform2"):
+                nav1,nav2,nav3 = st.columns([3,2,1])
+                Rgnes=["Latin America & Caribeann","Africa","European Union","South Asia","World"]
 
-    st.title("Life Expectancy")
+                Paises=[]
+         with nav1:
+                    search_term2 =st.selectbox("Select Region :",Rgnes)
+                    if search_term2 =="Latin America & Caribeann":
+                        Paises=["Bermudas","Costa Rica","Chile","Puerto Rico","Virgins Islands","Barbados"]
+                    if search_term2 =="Africa":
+                        Paises=["Seychelles","Algeria","Morocco","Tunisia","Mauritius","Cabo Verde"]
+                    if search_term2 =="European Union":
+                        Paises=["Malta","Suecia","Italia","España","Irlanda","Francia"]
+                    if search_term2 =="South Asia":
+                        Paises=["Maldives","Sri Lanka","Bangladesh","Bhutan","Nepal","India"]
+                    if search_term2 =="World":
+                        Paises=["Hong Kong SAR(China)","Japon","Macao SAR(China)","Singapur","Korea","China"]
+                     
+            
+         with nav2:
+                        Rg = st.selectbox("Paises :",Paises)
+                           
+         with nav3:
+                        submit_search = st.form_submit_button()
+         with nav1:
+                     def result():
+                        #Latin America & Caribeann
+                        if Rg=="Bermudas":
+                           return BMU()
+                        if Rg== "Costa Rica":
+                           return CRI()
+                        if Rg== "Chile":
+                           return CHL()
+                        if Rg== "Puerto Rico":
+                           return PIR()
+                        if Rg== "Virgins Islands":
+                           return VIR()
+                        if Rg== "Barbados":
+                           return BRB1()
+                        #Africa
+                        if Rg =="Seychelles":
+                           return SYC()
+                        if Rg =="Algeria":
+                           return DZA()
+                        if Rg =="Morocco":
+                           return MAR()
+                        if Rg =="Tunisia":
+                           return TUN()
+                        if Rg =="Mauritius":
+                           return MUS()
+                        if Rg =="Cabo Verde":
+                           return CPV() 
+                        #European Union
+                        if Rg =="Malta":
+                           return MLT()
+                        if Rg =="Suecia":
+                           return SWE()
+                        if Rg =="Italia":
+                           return ITA()
+                        if Rg =="España":
+                           return ESP()
+                        if Rg =="Irlanda":
+                           return IRL()
+                        if Rg =="Francia":
+                           return FRA()
+                        #South Asia
+                        if Rg =="Maldives":
+                           return MDV()
+                        if Rg =="Sri Lanka":
+                           return LKA()
+                        if Rg =="Bangladesh":
+                           return BGD()
+                        if Rg =="Bhutan":
+                           return BTN()
+                        if Rg =="Nepal":
+                           return NPL()
+                        if Rg =="India":
+                           return IND()
+                        #World
+                        if Rg =="Hong Kong SAR(China)":
+                           return HKG()
+                        if Rg =="Japon":
+                           return JPN()
+                        if Rg =="Macao SAR(China)":
+                           return MAC()
+                        if Rg =="Singapur":
+                           return SGP()
+                        if Rg =="Korea":
+                           return KOR()
+                        if Rg =="China":
+                           return CHI()
 
+         st.write(result())   
+
+         
+         #----------------------------------------------------------------------------------------------------------------------
+    menu = ["Off","Life Expectancy-Test","Dataset-Test","Info","Datasets"]
+    choice = st.sidebar.selectbox("Proyeccion + Datasets (Semana 1)",menu)
+    
+    if choice == "Off":
+      st.title(" ")
     if choice == "Life Expectancy-Test":
+            st.title("Life Expectancy")
             st.subheader("Continentes")
             if st.checkbox("America"):
                 st.write(lifexp())
@@ -75,19 +185,20 @@ def main():
             if st.checkbox("Oceania"):
                 st.write(lifexpo())
     if choice == "Dataset-Test":
-            
+            st.title("Life Expectancy")
             st.subheader("Dataset-Test")
             if st.checkbox("Dataset"):
                 df=pd.read_csv("life_expectancy.csv")
                 st.dataframe(df)
         
-            if st.checkbox("AFR"):
-                st.dataframe(AfrAFR())
+            
     if choice == "Info":
 
             st.subheader("Info")
             if st.checkbox("Regions"):
                 st.write(wb.region.info())
+            if st.checkbox("Countries"):
+                st.write(wb.economy.info())
             
             if st.checkbox("Series"):
                 st.write(wb.series.info())
@@ -102,7 +213,6 @@ def main():
                         ,"Birth rate, crude (per 1000 people)",
                         "Births attended by skilled health staff (%)",
                         "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (%) of total",
-                        "Capital health expenditure (%) of GDP",
                         "Current health expenditure (%) of GDP",
                         "Current health expenditure per capita (current US$)",
                         "Death rate, crude (per 1,000 people)",
@@ -177,18 +287,7 @@ def main():
                            return CodpnEUU()
                         if search_term =="Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (%) of total" and Regions == "South Asia(SAS)":
                            return CodpnSAS()
-                    #Capital health expenditure (%) of GDP
-                   
-                        if search_term =="Capital health expenditure (%) of GDP" and Regions == "World(WLD)":
-                           return CheWLD() 
-                        if search_term =="Capital health expenditure (%) of GDP" and Regions == "Latin America and the Caribbean(CLA)":
-                           return CheCLA()
-                        if search_term =="Capital health expenditure (%) of GDP" and Regions == "Africa(AFR)":
-                           return CheAFR()
-                        if search_term =="Capital health expenditure (%) of GDP" and Regions == "European Union(EUU)":
-                           return CheEUU()
-                        if search_term =="Capital health expenditure (%) of GDP" and Regions == "South Asia(SAS)":
-                           return CheSAS()
+                    
                     
                     #Current health expenditure (%) of GDP
                    
@@ -455,6 +554,6 @@ def main():
                 st.write(result())
                 with nav3:    
                     submit_search = st.form_submit_button()
-
+   
 if __name__ =="__main__":
     main()

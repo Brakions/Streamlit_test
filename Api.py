@@ -95,27 +95,6 @@ def CodpnSAS():
     CodpnSAS=wb.data.DataFrame('SH.DTH.COMM.ZS', wb.region.members('SAS'), range(2010, 2023, 1))
     return CodpnSAS
 
-## Capital health expenditure (% of GDP)-----------------------------------------------------------------------------------------
-#World(WLD)
-def CheWLD():
-    CheWLD=wb.data.DataFrame('SH.STA.BRTC.ZS', wb.region.members('WLD'), range(2010, 2023, 1))
-    return CheWLD
-#Latin America and the Caribbean(IFC classification)(CLA)
-def CheCLA():
-    CheCLA=wb.data.DataFrame('SH.STA.BRTC.ZS', wb.region.members('CLA'), range(2010, 2023, 1))
-    return CheCLA
-#Africa(AFR)
-def CheAFR():
-    CheAFR=wb.data.DataFrame('SH.STA.BRTC.ZS', wb.region.members('AFR'), range(2010, 2023, 1))
-    return CheAFR
-#European Union(EUU)
-def CheEUU():
-    CheEUU=wb.data.DataFrame('SH.STA.BRTC.ZS', wb.region.members('EUU'), range(2010, 2023, 1))
-    return CheEUU
-#South Asia(IFC classification)(SAS)
-def CheSAS():
-    CheSAS=wb.data.DataFrame('SH.STA.BRTC.ZS', wb.region.members('SAS'), range(2010, 2023, 1))
-    return CheSAS
 
 ## Current health expenditure (% of GDP)------------------------------------------------------------------------------------------
 #World(WLD)
