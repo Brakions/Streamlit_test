@@ -8,11 +8,11 @@ import pandas as pd
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from client import lifexp,lifexpe,lifexpa,lifexpaf,lifexpo
-from client import BMU,CRI,BRB1,PIR,CHL,VIR
+from client import BRA,COL,MEX,PER,CHL,ARG
 from client import SYC,DZA,MAR,TUN,MUS,CPV
 from client import MLT,SWE,ESP,ITA,IRL,FRA
-from client import MDV,LKA,BGD,BTN,NPL,IND
-from client import CHI,HKG,KOR,MAC,SGP,JPN
+from client import LKA,BGD,NPL,IND
+from client import CHN,USA,PAK,IDN,AFG
 #API IMPORT -------------------------------------------------------------------------------------------------------------------
 ## Adolescent fertility rate (births per 1,000 women ages 15-19)
 from Api import AfrAFR,AfrCLA,AfrEUU,AfrSAS,AfrWLD
@@ -78,15 +78,15 @@ def main():
          with nav1:
                     search_term2 =st.selectbox("Select Region :",Rgnes)
                     if search_term2 =="Latin America & Caribeann":
-                        Paises=["Bermudas","Costa Rica","Chile","Puerto Rico","Virgins Islands","Barbados"]
+                        Paises=["Brazil","Mexico","Colombia","Argentina","Perú","Chile"]
                     if search_term2 =="Africa":
                         Paises=["Seychelles","Algeria","Morocco","Tunisia","Mauritius","Cabo Verde"]
                     if search_term2 =="European Union":
                         Paises=["Malta","Suecia","Italia","España","Irlanda","Francia"]
                     if search_term2 =="South Asia":
-                        Paises=["Maldives","Sri Lanka","Bangladesh","Bhutan","Nepal","India"]
+                        Paises=["Pakistán","Sri Lanka","Bangladesh","Afghanistan","Nepal","India"]
                     if search_term2 =="World":
-                        Paises=["Hong Kong SAR(China)","Japon","Macao SAR(China)","Singapur","Korea","China"]
+                        Paises=["United States","Pakistán","Indonesia","India","China","Brazil"]
                      
             
          with nav2:
@@ -97,18 +97,18 @@ def main():
          with nav1:
                      def result():
                         #Latin America & Caribeann
-                        if Rg=="Bermudas":
-                           return BMU()
-                        if Rg== "Costa Rica":
-                           return CRI()
+                        if Rg=="Brazil":
+                           return BRA()
+                        if Rg== "Mexico":
+                           return MEX()
+                        if Rg== "Colombia":
+                           return COL()
+                        if Rg== "Argentina":
+                           return ARG()
+                        if Rg== "Perú":
+                           return PER()
                         if Rg== "Chile":
                            return CHL()
-                        if Rg== "Puerto Rico":
-                           return PIR()
-                        if Rg== "Virgins Islands":
-                           return VIR()
-                        if Rg== "Barbados":
-                           return BRB1()
                         #Africa
                         if Rg =="Seychelles":
                            return SYC()
@@ -136,31 +136,31 @@ def main():
                         if Rg =="Francia":
                            return FRA()
                         #South Asia
-                        if Rg =="Maldives":
-                           return MDV()
+                        #if Rg =="Pakistán":
+                           #return MDV()
                         if Rg =="Sri Lanka":
                            return LKA()
                         if Rg =="Bangladesh":
                            return BGD()
-                        if Rg =="Bhutan":
-                           return BTN()
+                        if Rg =="Afghanistan":
+                           return AFG()
                         if Rg =="Nepal":
                            return NPL()
                         if Rg =="India":
                            return IND()
                         #World
-                        if Rg =="Hong Kong SAR(China)":
-                           return HKG()
-                        if Rg =="Japon":
-                           return JPN()
-                        if Rg =="Macao SAR(China)":
-                           return MAC()
-                        if Rg =="Singapur":
-                           return SGP()
-                        if Rg =="Korea":
-                           return KOR()
+                        if Rg =="United States":
+                           return USA()
+                        #if Rg =="Japon":
+                           #return JPN()
+                        if Rg =="Pakistán":
+                           return PAK()
+                        if Rg =="Indonesia":
+                           return IDN()
+                        #if Rg =="Korea":
+                         #  return KOR()
                         if Rg =="China":
-                           return CHI()
+                           return CHN()
 
          st.write(result())   
 

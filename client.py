@@ -311,13 +311,13 @@ def lifexpo():
 
     ##DATASETS------------------------------------------------------------------------------------------------------------------
     ### Latin America & Caribeann
-    ##BMU(Bermuda)-CRI(Costa Rica)-CHL(Chile)-PRI(Puerto Rico)-VIR(Virgins Islands)-BRB(Barbados)
-    #Bermudas
-def BMU():
-    BMU=wb.data.DataFrame(['SP.ADO.TFRT',
+    ##BRA(Brazil)-MEX(Mexico)-COL(Colombia)-ARG(Argentina)-PER(Peru)-VEN(Venezuela)
+    #Brazil
+def BRA():
+    BRA=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -325,7 +325,7 @@ def BMU():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -336,15 +336,17 @@ def BMU():
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
     "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"BMU",range(1990,2021,1))
-    return BMU
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"BRA",range(1990,2021,1))
+    return BRA
 
-    #Costa Rica
-def CRI():
-    CRI=wb.data.DataFrame(['SP.ADO.TFRT',
+    #Mexico
+def MEX():
+    MEX=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -352,7 +354,7 @@ def CRI():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -363,15 +365,104 @@ def CRI():
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
     "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"CRI",range(1990,2021,1))
-    return CRI
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"MEX",range(1990,2021,1))
+    return MEX
 
-    #Chile
+    #Colombia
+def COL():
+    COL=wb.data.DataFrame(['SP.ADO.TFRT',
+    'SP.DYN.CBRT.IN',
+    
+    
+    'SH.XPD.CHEX.GD.ZS',
+    "SH.XPD.CHEX.PC.CD",
+    "SP.DYN.CDRT.IN",
+    "SP.DYN.TFRT.IN",
+    "SP.DYN.LE00.FE.IN",
+    "SP.DYN.LE00.MA.IN",
+    "SP.DYN.LE00.IN",
+    
+    "SP.DYN.AMRT.FE",
+    "SP.DYN.AMRT.MA",
+    "SP.DYN.IMRT.IN",
+    "SP.POP.GROW",
+    "SP.POP.TOTL.FE.IN",
+    "SP.POP.TOTL.MA.IN",
+    "SP.POP.TOTL",
+    "SH.STA.SUIC.P5",
+    "SH.STA.SUIC.FE.P5",
+    "SH.STA.SUIC.MA.P5",
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"COL",range(1990,2021,1))
+    return COL
+
+    #Argentina
+def ARG():
+    ARG=wb.data.DataFrame(['SP.ADO.TFRT',
+    'SP.DYN.CBRT.IN',
+    
+    
+    'SH.XPD.CHEX.GD.ZS',
+    "SH.XPD.CHEX.PC.CD",
+    "SP.DYN.CDRT.IN",
+    "SP.DYN.TFRT.IN",
+    "SP.DYN.LE00.FE.IN",
+    "SP.DYN.LE00.MA.IN",
+    "SP.DYN.LE00.IN",
+    
+    "SP.DYN.AMRT.FE",
+    "SP.DYN.AMRT.MA",
+    "SP.DYN.IMRT.IN",
+    "SP.POP.GROW",
+    "SP.POP.TOTL.FE.IN",
+    "SP.POP.TOTL.MA.IN",
+    "SP.POP.TOTL",
+    "SH.STA.SUIC.P5",
+    "SH.STA.SUIC.FE.P5",
+    "SH.STA.SUIC.MA.P5",
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"ARG",range(1990,2021,1))
+    return ARG
+
+    #Perú
+def PER():
+    PER=wb.data.DataFrame(['SP.ADO.TFRT',
+    'SP.DYN.CBRT.IN',
+    
+    
+    'SH.XPD.CHEX.GD.ZS',
+    "SH.XPD.CHEX.PC.CD",
+    "SP.DYN.CDRT.IN",
+    "SP.DYN.TFRT.IN",
+    "SP.DYN.LE00.FE.IN",
+    "SP.DYN.LE00.MA.IN",
+    "SP.DYN.LE00.IN",
+    
+    "SP.DYN.AMRT.FE",
+    "SP.DYN.AMRT.MA",
+    "SP.DYN.IMRT.IN",
+    "SP.POP.GROW",
+    "SP.POP.TOTL.FE.IN",
+    "SP.POP.TOTL.MA.IN",
+    "SP.POP.TOTL",
+    "SH.STA.SUIC.P5",
+    "SH.STA.SUIC.FE.P5",
+    "SH.STA.SUIC.MA.P5",
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"PER",range(1990,2021,1))
+    return PER
+
+    #Venezuela
 def CHL():
     CHL=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -379,7 +470,7 @@ def CHL():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -390,89 +481,10 @@ def CHL():
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
     "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"CHL",range(1990,2021,1))
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"CHL",range(1990,2021,1))
     return CHL
-
-    #Puerto Rico
-def PIR():
-    PIR=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"PRI",range(1990,2021,1))
-    return PIR
-
-    #Virgin Islands
-def VIR():
-    VIR=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"VIR",range(1990,2021,1))
-    return VIR
-
-    #Barbados
-def BRB1():
-    BRB1=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"BRB",range(1990,2021,1))
-    return BRB1
 
 
 
@@ -483,8 +495,8 @@ def BRB1():
 def SYC():
     SYC=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -492,7 +504,7 @@ def SYC():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -503,7 +515,9 @@ def SYC():
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
     "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"SYC",range(1990,2021,1))
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"SYC",range(1990,2021,1))
     return SYC
 
 
@@ -511,8 +525,8 @@ def SYC():
 def DZA():
     DZA=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -520,7 +534,7 @@ def DZA():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -531,7 +545,9 @@ def DZA():
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
     "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"DZA",range(1990,2021,1))
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"DZA",range(1990,2021,1))
     return DZA
 
 
@@ -539,8 +555,8 @@ def DZA():
 def MAR():
     MAR=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -548,7 +564,7 @@ def MAR():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -559,7 +575,9 @@ def MAR():
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
     "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"MAR",range(1990,2021,1))
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"MAR",range(1990,2021,1))
     return MAR
 
 
@@ -567,8 +585,8 @@ def MAR():
 def TUN():
     TUN=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -576,7 +594,7 @@ def TUN():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -587,7 +605,9 @@ def TUN():
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
     "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"TUN",range(1990,2021,1))
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"TUN",range(1990,2021,1))
     return TUN
 
 
@@ -595,8 +615,8 @@ def TUN():
 def MUS():
     MUS=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -604,7 +624,7 @@ def MUS():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -615,7 +635,9 @@ def MUS():
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
     "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"MUS",range(1990,2021,1))
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"MUS",range(1990,2021,1))
     return MUS
 
 
@@ -623,8 +645,8 @@ def MUS():
 def CPV():
     CPV=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -632,7 +654,7 @@ def CPV():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -643,7 +665,9 @@ def CPV():
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
     "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"CPV",range(1990,2021,1))
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"CPV",range(1990,2021,1))
     return CPV
 
 
@@ -654,8 +678,8 @@ def CPV():
 def MLT():
     MLT=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -663,7 +687,7 @@ def MLT():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -674,7 +698,9 @@ def MLT():
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
     "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"MLT",range(1990,2021,1))
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"MLT",range(1990,2021,1))
     return MLT
 
 
@@ -682,8 +708,8 @@ def MLT():
 def SWE():
     SWE=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -691,7 +717,7 @@ def SWE():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -702,7 +728,9 @@ def SWE():
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
     "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"SWE",range(1990,2021,1))
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"SWE",range(1990,2021,1))
     return SWE
 
 
@@ -710,8 +738,8 @@ def SWE():
 def ITA():
     ITA=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -719,7 +747,7 @@ def ITA():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -730,7 +758,9 @@ def ITA():
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
     "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"ITA",range(1990,2021,1))
+    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"ITA",range(1990,2021,1))
     return ITA
 
 
@@ -738,8 +768,8 @@ def ITA():
 def ESP():
     ESP=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -747,7 +777,7 @@ def ESP():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -758,7 +788,10 @@ def ESP():
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
     "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"ESP",range(1990,2021,1))
+    
+"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"ESP",range(1990,2021,1))
     return ESP
 
 
@@ -766,8 +799,8 @@ def ESP():
 def IRL():
     IRL=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -775,7 +808,7 @@ def IRL():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -785,8 +818,11 @@ def IRL():
     "SP.POP.TOTL",
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"IRL",range(1990,2021,1))
+    "SH.STA.SUIC.MA.P5"
+    
+,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"IRL",range(1990,2021,1))
     return IRL
 
 
@@ -794,8 +830,8 @@ def IRL():
 def FRA():
     FRA=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -803,7 +839,7 @@ def FRA():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -813,20 +849,23 @@ def FRA():
     "SP.POP.TOTL",
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"FRA",range(1990,2021,1))
+    "SH.STA.SUIC.MA.P5"
+    
+,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"FRA",range(1990,2021,1))
     return FRA
 
 
 
     ### South Asia
-    ##MDV(Maldives)-LKA(Sri Lanka)-BGD(Bangladesh)-BTN(Bhutan)-NLP(Nepal)-IND(India)
-    #Maldives
-def MDV():
-    MDV=wb.data.DataFrame(['SP.ADO.TFRT',
+    ##IND(India)-PAK(Pakistan)-BGD(Bangladesh)-AFG(Afghanistan)-NLP(Nepal)-LKA(Sri Lanka)
+    #Pakistán
+def PAK():
+    PAK=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -834,7 +873,7 @@ def MDV():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -844,17 +883,20 @@ def MDV():
     "SP.POP.TOTL",
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"MDV",range(1990,2021,1))
-    return MDV
+    "SH.STA.SUIC.MA.P5"
+    
+,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"PAK",range(1990,2021,1))
+    return PAK
 
 
     #Sri Lanka
 def LKA():
     LKA=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -862,7 +904,7 @@ def LKA():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -872,8 +914,11 @@ def LKA():
     "SP.POP.TOTL",
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"LKA",range(1990,2021,1))
+    "SH.STA.SUIC.MA.P5"
+    
+"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"LKA",range(1990,2021,1))
     return LKA
 
 
@@ -881,8 +926,8 @@ def LKA():
 def BGD():
     BGD=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -890,7 +935,7 @@ def BGD():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -900,17 +945,20 @@ def BGD():
     "SP.POP.TOTL",
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"BGD",range(1990,2021,1))
+    "SH.STA.SUIC.MA.P5"
+    
+,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"BGD",range(1990,2021,1))
     return BGD
 
 
-    #Bhutan
-def BTN():
-    BTN=wb.data.DataFrame(['SP.ADO.TFRT',
+    #Afghanistan
+def AFG():
+    AFG=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -918,7 +966,7 @@ def BTN():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -928,17 +976,20 @@ def BTN():
     "SP.POP.TOTL",
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"BTN",range(1990,2021,1))
-    return BTN
+    "SH.STA.SUIC.MA.P5"
+    
+,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"BTN",range(1990,2021,1))
+    return AFG
 
 
     #Nepal
 def NPL():
     NPL=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -946,7 +997,7 @@ def NPL():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -956,8 +1007,11 @@ def NPL():
     "SP.POP.TOTL",
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"NPL",range(1990,2021,1))
+    "SH.STA.SUIC.MA.P5"
+    
+,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"NPL",range(1990,2021,1))
     return NPL
 
 
@@ -965,8 +1019,8 @@ def NPL():
 def IND():
     IND=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -974,7 +1028,7 @@ def IND():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -984,20 +1038,23 @@ def IND():
     "SP.POP.TOTL",
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"IND",range(1990,2021,1))
+    "SH.STA.SUIC.MA.P5"
+    
+,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"IND",range(1990,2021,1))
     return IND
 
 
 
     ### World
-    ## HKG(Hong Kong SAR, China)-JPN(Japon)-MAC(Macao SAR, China)-SGP(Singapur)-KOR(Korea)-CHI(China)
-    #Hong Kong(china)
-def HKG():
-    HKG=wb.data.DataFrame(['SP.ADO.TFRT',
+    ## World CHN(China)-IND(India)-USA(United States)-IDN(Indonesia)-PAK(Pakistan)-BRA(Brasil)
+    #USA
+def USA():
+    USA=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -1005,7 +1062,7 @@ def HKG():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -1015,17 +1072,20 @@ def HKG():
     "SP.POP.TOTL",
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"HKG",range(1990,2021,1))
-    return HKG
+    "SH.STA.SUIC.MA.P5"
+    
+,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"USA",range(1990,2021,1))
+    return USA
 
 
-    #Japon
-def JPN():
-    JPN=wb.data.DataFrame(['SP.ADO.TFRT',
+    #Indonesia
+def IDN():
+    IDN=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+ 
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -1033,7 +1093,7 @@ def JPN():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -1043,45 +1103,23 @@ def JPN():
     "SP.POP.TOTL",
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"JPN",range(1990,2021,1))
-    return JPN
+    "SH.STA.SUIC.MA.P5"
+    
+,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.DYN.NCOM.ZS","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"
+],"IDN",range(1990,2021,1))
+    return IDN
 
 
-    #Macao SAR(China)
-def MAC():
-    MAC=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"MAC",range(1990,2021,1))
-    return MAC
 
 
     #Singapur
 def SGP():
     SGP=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -1089,7 +1127,7 @@ def SGP():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -1099,45 +1137,23 @@ def SGP():
     "SP.POP.TOTL",
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"SGP",range(1990,2021,1))
+    "SH.STA.SUIC.MA.P5"
+    
+,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"SGP",range(1990,2021,1))
     return SGP
 
 
-    #Korea
-def KOR():
-    KOR=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"KOR",range(1990,2021,1))
-    return KOR
+
 
 
     #China
-def CHI():
-    CHI=wb.data.DataFrame(['SP.ADO.TFRT',
+def CHN():
+    CHN=wb.data.DataFrame(['SP.ADO.TFRT',
     'SP.DYN.CBRT.IN',
-    'SH.STA.BRTC.ZS',
-    'SH.DTH.COMM.ZS',
+    
+    
     'SH.XPD.CHEX.GD.ZS',
     "SH.XPD.CHEX.PC.CD",
     "SP.DYN.CDRT.IN",
@@ -1145,7 +1161,7 @@ def CHI():
     "SP.DYN.LE00.FE.IN",
     "SP.DYN.LE00.MA.IN",
     "SP.DYN.LE00.IN",
-    "SH.STA.BRTW.ZS",
+    
     "SP.DYN.AMRT.FE",
     "SP.DYN.AMRT.MA",
     "SP.DYN.IMRT.IN",
@@ -1155,8 +1171,12 @@ def CHI():
     "SP.POP.TOTL",
     "SH.STA.SUIC.P5",
     "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SP.DYN.WFRT"],"CHI",range(1990,2021,1))
-    return CHI
+    "SH.STA.SUIC.MA.P5"
+    
+,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD","NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
+"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"
+],"CHN",range(1990,2021,1))
+    return CHN
     
     ##DATASETS------------------------------------------------------------------------------------------------------------------
