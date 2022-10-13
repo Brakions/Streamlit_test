@@ -2,15 +2,19 @@ from unittest import result
 from matplotlib.backend_bases import key_press_handler
 import streamlit as st
 import wbgapi as wb
+import numpy as np
+from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 from Api import *
 from secrets import choice
 import pandas as pd
+import pickle
+from flask import Flask, request, jsonify, render_template, url_for
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-from client import lifexp,lifexpe,lifexpa,lifexpaf,lifexpo
+from client import DEU, EGY, ETH, NGA, ROU, TZA, ZAF, lifexp,lifexpe,lifexpa,lifexpaf,lifexpo
 from client import BRA,COL,MEX,PER,CHL,ARG
-from client import SYC,DZA,MAR,TUN,MUS,CPV
-from client import MLT,SWE,ESP,ITA,IRL,FRA
+from client import ETH,ZAF,COD,TZA,EGY,NGA
+from client import POL,DEU,ESP,ITA,ROU,FRA
 from client import LKA,BGD,NPL,IND
 from client import CHN,USA,PAK,IDN,AFG
 #API IMPORT -------------------------------------------------------------------------------------------------------------------
@@ -62,12 +66,77 @@ from Api import SmrmAFR,SmrmCLA,SmrmEUU,SmrmSAS,SmrmWLD
 from Api import WfrAFR,WfrCLA,WfrEUU,WfrSAS,WfrWLD
 #API IMPORT -------------------------------------------------------------------------------------------------------------------
 def main():
-    casa=["Off","Datasets"]
-    choice = st.sidebar.selectbox("(Semana 2)",casa)
+    techo=["Off","model"]
+    choice = st.sidebar.selectbox("Prediction",techo)
+    if choice == "Off":
+      st.title("")
+    
+    ##-------------------------------------------------------------------------------------------------------------------------
+      # Path del modelo preentrenado
+    MODEL_PATH = 'pickle_model.pkl'
+    
+            
+    def model_prediction(x_in, model):
+
+               x = np.asarray(x_in).reshape(1,-1)
+               preds=model.predict(x)
+
+               return preds
+    
+    if choice == "model":
+        st.title("Life Expentancy Predict")
+        # Se carga el modelo
+        with open(MODEL_PATH, 'rb') as file:
+            model = pickle.load(file)
+    
+
+      # Lecctura de datos
+      #Datos = st.text_input
+        A = st.text_input("GDP (constant 2015 US$):")
+        B = st.text_input("GDP (constant LCU):")
+        C = st.text_input("Suicide mortality rate (per 100,000 population):")
+        D = st.text_input("Current health expenditure (%) of GDP:")
+        E = st.text_input("Current health expenditure per capita (current US$)")
+        F = st.text_input("Adolescent fertility rate :")
+        G = st.text_input("Birth rate, crude (per 1000 people):")
+        H = st.text_input("Mortality rate, infant (per 1,000 live births):")
+        I = st.text_input("Fertility rate, total :")
+        J = st.text_input("Population growth (annual %):")
+        K = st.text_input("Population, total")
+       
+    
+      
+      # El botón predicción se usa para iniciar el procesamiento
+        if st.button("Predicción :"): 
+        #x_in = list(np.float_((Datos.title().split('\t'))))
+            x_in =[np.float_(A.title()),
+                    np.float_(B.title()),
+                    np.float_(C.title()),
+                    np.float_(D.title()),
+                    np.float_(E.title()),
+                    np.float_(F.title()),
+                    np.float_(G.title()),
+                    np.float_(H.title()),
+                    np.float_(I.title()),
+                    np.float_(J.title()),
+                    np.float_(K.title()),]
+                    
+            predictS = model_prediction(x_in, model)
+            st.success('La Esperanza de vida es: {}'.format(predictS[0]).upper())
+        
+ 
+    ##-------------------------------------------------------------------------------------------------------------------------
+
+    casa=["Off","Series"]
+    choice = st.sidebar.selectbox("Stats Explorer",casa)
     if choice == "Off":
       st.title(" ")
-    if choice == "Datasets":
-         st.title(" ")
+    if choice == "Series":
+         st.title("Series Stats Explorer")
+         st.markdown('''
+         Esta aplicación realiza una exploracion simple de datos estadísticos que tienen impacto en la  esperanza de vida !
+         * **Python libraries:** pandas, streamlit, wbgapi 
+         * **Data source:** https://www.worldbank.org/en/home''')
          st.subheader("Datasets")
          #----------------------------------------------------------------------------------------------------------------------
          with st.form(key="searchform2"):
@@ -80,9 +149,9 @@ def main():
                     if search_term2 =="Latin America & Caribeann":
                         Paises=["Brazil","Mexico","Colombia","Argentina","Perú","Chile"]
                     if search_term2 =="Africa":
-                        Paises=["Seychelles","Algeria","Morocco","Tunisia","Mauritius","Cabo Verde"]
+                        Paises=["Congo","Nigeria","Ethiopia","Egipto","Tanzania","South Africa"]
                     if search_term2 =="European Union":
-                        Paises=["Malta","Suecia","Italia","España","Irlanda","Francia"]
+                        Paises=["Polonia","Alemania","Italia","España","Romania","Francia"]
                     if search_term2 =="South Asia":
                         Paises=["Pakistán","Sri Lanka","Bangladesh","Afghanistan","Nepal","India"]
                     if search_term2 =="World":
@@ -110,29 +179,29 @@ def main():
                         if Rg== "Chile":
                            return CHL()
                         #Africa
-                        if Rg =="Seychelles":
-                           return SYC()
-                        if Rg =="Algeria":
-                           return DZA()
-                        if Rg =="Morocco":
-                           return MAR()
-                        if Rg =="Tunisia":
-                           return TUN()
-                        if Rg =="Mauritius":
-                           return MUS()
-                        if Rg =="Cabo Verde":
-                           return CPV() 
+                        if Rg =="Congo":
+                           return COD()
+                        if Rg =="Nigeria":
+                           return NGA()
+                        if Rg =="South Africa":
+                           return ZAF()
+                        if Rg =="Ethiopia":
+                           return ETH()
+                        if Rg =="Tanzania":
+                           return TZA()
+                        if Rg =="Egipto":
+                           return EGY() 
                         #European Union
-                        if Rg =="Malta":
-                           return MLT()
-                        if Rg =="Suecia":
-                           return SWE()
+                        if Rg =="Polonia":
+                           return POL()
+                        if Rg =="Romania":
+                           return ROU()
                         if Rg =="Italia":
                            return ITA()
                         if Rg =="España":
                            return ESP()
-                        if Rg =="Irlanda":
-                           return IRL()
+                        if Rg =="Alemania":
+                           return DEU()
                         if Rg =="Francia":
                            return FRA()
                         #South Asia
@@ -166,30 +235,25 @@ def main():
 
          
          #----------------------------------------------------------------------------------------------------------------------
-    menu = ["Off","Life Expectancy-Test","Dataset-Test","Info","Datasets"]
+    menu = ["Off","Life Expectancy-Regions","Info","Datasets"]
     choice = st.sidebar.selectbox("Proyeccion + Datasets (Semana 1)",menu)
     
     if choice == "Off":
       st.title(" ")
-    if choice == "Life Expectancy-Test":
+    if choice == "Life Expectancy-Regions":
             st.title("Life Expectancy")
-            st.subheader("Continentes")
-            if st.checkbox("America"):
+            st.subheader("Regiones")
+            if st.checkbox("Latin America & Caribeann"):
                 st.write(lifexp())
-            if st.checkbox("Europa"):
+            if st.checkbox("European Union"):
                 st.write(lifexpe())
-            if st.checkbox("Asia"):
+            if st.checkbox("South Asia"):
                 st.write(lifexpa())
             if st.checkbox("Africa"):
                 st.write(lifexpaf())
-            if st.checkbox("Oceania"):
+            if st.checkbox("World"):
                 st.write(lifexpo())
-    if choice == "Dataset-Test":
-            st.title("Life Expectancy")
-            st.subheader("Dataset-Test")
-            if st.checkbox("Dataset"):
-                df=pd.read_csv("life_expectancy.csv")
-                st.dataframe(df)
+    
         
             
     if choice == "Info":
@@ -211,27 +275,16 @@ def main():
                 nav1,nav2,nav3 = st.columns([3,2,1])
                 Series=["Adolescent fertility rate (ages 15-19)"
                         ,"Birth rate, crude (per 1000 people)",
-                        "Births attended by skilled health staff (%)",
-                        "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (%) of total",
                         "Current health expenditure (%) of GDP",
                         "Current health expenditure per capita (current US$)",
-                        "Death rate, crude (per 1,000 people)",
                         "Fertility rate, total (births per woman)",
-                        "Life expectancy at birth, female (years)",
-                        "Life expectancy at birth, male (years)",
                         "Life expectancy at birth, total (years)",
-                        "Low-birthweight babies (%) of births",
-                        "Mortality rate, adult, female (per 1,000 female adults)",
-                        "Mortality rate, adult, male (per 1,000 male adults)",
                         "Mortality rate, infant (per 1,000 live births)",
                         "Population growth (annual %)",
-                        "Population, female",
-                        "Population, male",
                         "Population, total",
                         "Suicide mortality rate (per 100,000 population)",
-                        "Suicide mortality rate, female (per 100,000 female population)",
-                        "Suicide mortality rate, male (per 100,000 male population)",
-                        "Wanted fertility rate (births per woman)"]
+                        "(constant 2015 US$)",
+                        "GDP(constant LCU)"]
                 Regiones=["World(WLD)","Latin America and the Caribbean(CLA)",
                             "Africa(AFR)","European Union(EUU)","South Asia(SAS)"]
                 with nav1:
@@ -370,7 +423,7 @@ def main():
                     #Life expectancy at birth, total (years)
                    
                         if search_term =="Life expectancy at birth, total (years)" and Regions == "World(WLD)":
-                           return LebWLD() 
+                           return LebWLD()
                         if search_term =="Life expectancy at birth, total (years)" and Regions == "Latin America and the Caribbean(CLA)":
                            return LebCLA()
                         if search_term =="Life expectancy at birth, total (years)" and Regions == "Africa(AFR)":
@@ -554,6 +607,8 @@ def main():
                 st.write(result())
                 with nav3:    
                     submit_search = st.form_submit_button()
+   
+   
    
 if __name__ =="__main__":
     main()

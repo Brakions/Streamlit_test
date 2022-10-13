@@ -22,49 +22,56 @@ def lifexp():
         )
     fig.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="U.S.A",
-                        y=df["United States"],
-                        line = dict(color='black')
+                        x=GF.index,
+                        name="Brazil",
+                        y=GF["BRA"],
+                        line = dict(color="gold")
                     )
             )
     fig.add_trace(
                     go.Scatter(
-                        x=df["Year"],
+                        x=GF.index,
                         name="Argentina",
-                        y=df["Argentina"],
+                        y=GF["ARG"],
                         line = dict(color='skyblue')
                     )
 
     )
     fig.add_trace(
                     go.Scatter(
-                        x=df["Year"],
+                        x=GF.index,
                         name="Colombia",
-                        y=df["Colombia"],
-                        line = dict(color='goldenrod')
+                        y=GF["COL"],
+                        line = dict(color='green')
                     )
 
     )
     fig.add_trace(
                     go.Scatter(
-                        x=df["Year"],
+                        x=GF.index,
                         name="Peru",
-                        y=df["Peru"],
+                        y=GF["PER"],
                         line = dict(color='red')
                     )
 
     )
     fig.add_trace(
                     go.Scatter(
-                        x=df["Year"],
+                        x=GF.index,
                         name="Mexico",
-                        y=df["Mexico"],
-                        line = dict(color='green')
+                        y=GF["MEX"],
+                        line = dict(color='blueviolet')
                     )
 
     )
-        
+    fig.add_trace(
+                    go.Scatter(
+                        x=GF.index,
+                        name="Chile",
+                        y=GF["CHL"],
+                        line = dict(color='black')
+                    )  
+    )                  
     return fig
 #Life Expectancy in Europa
 def lifexpe():
@@ -81,44 +88,53 @@ def lifexpe():
         )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
+                        x=GF.index,
                         name="España",
-                        y=df["Spain"],
+                        y=GF["ESP"],
                         line = dict(color='black')
                     )
             )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
+                        x=GF.index,
                         name="Francia",
-                        y=df["France"],
+                        y=GF["FRA"],
                         line = dict(color='skyblue')
                     )
 
     )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
+                        x=GF.index,
                         name="Alemania",
-                        y=df["Germany"],
+                        y=GF["DEU"],
                         line = dict(color='goldenrod')
                     )
 
     )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
+                        x=GF.index,
                         name="Italia",
-                        y=df["Italy"],
+                        y=GF["ITA"],
                         line = dict(color='red')
                     )
 
     )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="Portugal",
-                        y=df["Portugal"],
+                        x=GF.index,
+                        name="Polonia",
+                        y=GF["POL"],
+                        line = dict(color='green')
+                    )
+
+    )
+    fige.add_trace(
+                    go.Scatter(
+                        x=GF.index,
+                        name="Romania",
+                        y=GF["ROU"],
                         line = dict(color='green')
                     )
 
@@ -126,7 +142,7 @@ def lifexpe():
         
     return fige
 
-#Life Expectancy in Asia
+#Life Expectancy in South Asia
 def lifexpa():
     figa=go.Figure()
     figa.update_layout(
@@ -141,44 +157,53 @@ def lifexpa():
         )
     figa.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="China",
-                        y=df["China"],
+                        x=GF.index,
+                        name="Afghanistan",
+                        y=GF["AFG"],
                         line = dict(color='black')
                     )
             )
     figa.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="Japón",
-                        y=df["Japan"],
+                        x=GF.index,
+                        name="Bangladesh",
+                        y=GF["BGD"],
                         line = dict(color='skyblue')
                     )
 
     )
     figa.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="Corea del sur",
-                        y=df["South Korea"],
+                        x=GF.index,
+                        name="Nepal",
+                        y=GF["NPL"],
                         line = dict(color='goldenrod')
                     )
 
     )
     figa.add_trace(
                     go.Scatter(
-                        x=df["Year"],
+                        x=GF.index,
                         name="India",
-                        y=df["India"],
+                        y=GF["IND"],
                         line = dict(color='red')
                     )
 
     )
     figa.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="Tailandia",
-                        y=df["Thailand"],
+                        x=GF.index,
+                        name="Pakistan",
+                        y=GF["PAK"],
+                        line = dict(color='green')
+                    )
+
+    )
+    figa.add_trace(
+                    go.Scatter(
+                        x=GF.index,
+                        name="Sri Lanka",
+                        y=GF["LKA"],
                         line = dict(color='green')
                     )
 
@@ -201,44 +226,53 @@ def lifexpaf():
         )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
+                        x=GF.index,
                         name="Egipto",
-                        y=df["Egypt"],
+                        y=GF["EGY"],
                         line = dict(color='black')
                     )
             )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="Argelia",
-                        y=df["Algeria"],
+                        x=GF.index,
+                        name="Congo",
+                        y=GF["COD"],
                         line = dict(color='skyblue')
                     )
 
     )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="Angola",
-                        y=df["Angola"],
+                        x=GF.index,
+                        name="Tanzania",
+                        y=GF["TZA"],
                         line = dict(color='goldenrod')
                     )
 
     )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
+                        x=GF.index,
                         name="Nigeria",
-                        y=df["Nigeria"],
+                        y=GF["NGA"],
                         line = dict(color='red')
                     )
 
     )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="Botsuana",
-                        y=df["Botswana"],
+                        x=GF.index,
+                        name="Ethiopia",
+                        y=GF["ETH"],
+                        line = dict(color='green')
+                    )
+
+    )
+    fige.add_trace(
+                    go.Scatter(
+                        x=GF.index,
+                        name="South Africa",
+                        y=GF["ZAF"],
                         line = dict(color='green')
                     )
 
@@ -246,7 +280,7 @@ def lifexpaf():
         
     return fige
 
-#Life Expectancy in Oceanía
+#Life Expectancy in World
 def lifexpo():
     fige=go.Figure()
     fige.update_layout(
@@ -261,44 +295,53 @@ def lifexpo():
         )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="Nueva Zelanda",
-                        y=df["New Zealand"],
+                        x=GF.index,
+                        name="USA",
+                        y=GF["USA"],
                         line = dict(color='black')
                     )
             )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="Australia",
-                        y=df["Australia"],
+                        x=GF.index,
+                        name="China",
+                        y=GF["CHN"],
                         line = dict(color='skyblue')
                     )
 
     )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="Fiji",
-                        y=df["Fiji"],
+                        x=GF.index,
+                        name="Pakistan",
+                        y=GF["PAK"],
                         line = dict(color='goldenrod')
                     )
 
     )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="Tonga",
-                        y=df["Tonga"],
+                        x=GF.index,
+                        name="India",
+                        y=GF["IND"],
                         line = dict(color='red')
                     )
 
     )
     fige.add_trace(
                     go.Scatter(
-                        x=df["Year"],
-                        name="Islas Salomón",
-                        y=df["Solomon Islands"],
+                        x=GF.index,
+                        name="Brazil",
+                        y=GF["BRA"],
+                        line = dict(color='green')
+                    )
+
+    )
+    fige.add_trace(
+                    go.Scatter(
+                        x=GF.index,
+                        name="Indonesia",
+                        y=GF["IDN"],
                         line = dict(color='green')
                     )
 
@@ -314,537 +357,327 @@ def lifexpo():
     ##BRA(Brazil)-MEX(Mexico)-COL(Colombia)-ARG(Argentina)-PER(Peru)-VEN(Venezuela)
     #Brazil
 def BRA():
-    BRA=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"BRA",range(1990,2021,1))
+    BRA=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"BRA",range(1990,2021,1))
     return BRA
 
     #Mexico
 def MEX():
-    MEX=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"MEX",range(1990,2021,1))
+    MEX=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"MEX",range(1990,2021,1))
     return MEX
 
     #Colombia
 def COL():
-    COL=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"COL",range(1990,2021,1))
+    COL=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"COL",range(1990,2021,1))
     return COL
 
     #Argentina
 def ARG():
-    ARG=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"ARG",range(1990,2021,1))
+    ARG=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"ARG",range(1990,2021,1))
     return ARG
 
     #Perú
 def PER():
-    PER=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"PER",range(1990,2021,1))
+    PER=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"PER",range(1990,2021,1))
     return PER
 
-    #Venezuela
+    #Chile
 def CHL():
-    CHL=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"CHL",range(1990,2021,1))
+    CHL=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"CHL",range(1990,2021,1))
     return CHL
 
 
 
     ### Africa
-    ##SYC(Seychelles)-DZA(Algeria)-MAR(Morocco)-TUN(Tunisia)-MUS(Mauritius)-CPV(Cabo Verde)
+    ##NGA(Nigeria)-ETH(Ethiopia)-EGY(Egipto)-COD(Congo)-TZA(Tanzania)-ZAF(South Africa)
 
-    #Seychelles
-def SYC():
-    SYC=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"SYC",range(1990,2021,1))
-    return SYC
+    #Nigeria
+def NGA():
+    NGA=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"NGA",range(1990,2021,1))
+    return NGA
 
 
-    #Algeria
-def DZA():
-    DZA=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"DZA",range(1990,2021,1))
-    return DZA
+    #Ethiopia
+def ETH():
+    ETH=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"ETH",range(1990,2021,1))
+    return ETH
 
 
-#Morocco
-def MAR():
-    MAR=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"MAR",range(1990,2021,1))
-    return MAR
+#Egipto
+def EGY():
+    EGY=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"EGY",range(1990,2021,1))
+    return EGY
 
 
-#Tunisia
-def TUN():
-    TUN=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"TUN",range(1990,2021,1))
-    return TUN
+#Congo
+def COD():
+    COD=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"COD",range(1990,2021,1))
+    return COD
 
 
-#Mauritius
-def MUS():
-    MUS=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"MUS",range(1990,2021,1))
-    return MUS
+#Tanzania
+def TZA():
+    TZA=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"TZA",range(1990,2021,1))
+    return TZA
 
 
-#Cabo Verde
-def CPV():
-    CPV=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"CPV",range(1990,2021,1))
-    return CPV
+#South Africa
+def ZAF():
+    ZAF=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"ZAF",range(1990,2021,1))
+    return ZAF
 
 
 
     ### European Union
-    ##MLT(Malta)-SWE(Suecia)-ITA(Italia)-ESP(España)-IRL-FRA(Francia)
-    #Malta
-def MLT():
-    MLT=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"MLT",range(1990,2021,1))
-    return MLT
+    ##MLT DEU(Germany)-FRA(Francia)-ITA(Italia)-ESP(España)-POL(Polonia)-ROU(Romania)
+    #Germany
+def DEU():
+    DEU=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"DEU",range(1990,2021,1))
+    return DEU
 
 
-    #Suecia
-def SWE():
-    SWE=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD","SP.DYN.CDRT.IN",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"SWE",range(1990,2021,1))
-    return SWE
+    #Romania
+def ROU():
+    ROU=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"ROU",range(1990,2021,1))
+    return ROU
 
 
     #Italia
 def ITA():
-    ITA=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    "SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"ITA",range(1990,2021,1))
+    ITA=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"ITA",range(1990,2021,1))
     return ITA
 
 
     #España
 def ESP():
-    ESP=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5",
-    
-"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"ESP",range(1990,2021,1))
+    ESP=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"ESP",range(1990,2021,1))
     return ESP
 
 
-    #Irlanda
-def IRL():
-    IRL=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5"
-    ,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"IRL",range(1990,2021,1))
-    return IRL
+    #Polonia
+def POL():
+    POL=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"POL",range(1990,2021,1))
+    return POL
 
 
     #Francia
 def FRA():
-    FRA=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5"
-    
-,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"FRA",range(1990,2021,1))
+    FRA=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"FRA",range(1990,2021,1))
     return FRA
 
 
@@ -853,187 +686,109 @@ def FRA():
     ##IND(India)-PAK(Pakistan)-BGD(Bangladesh)-AFG(Afghanistan)-NLP(Nepal)-LKA(Sri Lanka)
     #Pakistán
 def PAK():
-    PAK=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5"
-    
-,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"PAK",range(1990,2021,1))
+    PAK=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"PAK",range(1990,2021,1))
     return PAK
 
 
     #Sri Lanka
 def LKA():
-    LKA=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5"
-    
-"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"LKA",range(1990,2021,1))
+    LKA=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"LKA",range(1990,2021,1))
     return LKA
 
 
     #Bangladesh
 def BGD():
-    BGD=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5"
-    
-,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"BGD",range(1990,2021,1))
+    BGD=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"BGD",range(1990,2021,1))
     return BGD
 
 
     #Afghanistan
 def AFG():
-    AFG=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5"
-    
-,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"BTN",range(1990,2021,1))
+    AFG=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"BTN",range(1990,2021,1))
     return AFG
 
 
     #Nepal
 def NPL():
-    NPL=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5"
-    
-,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"NPL",range(1990,2021,1))
+    NPL=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"NPL",range(1990,2021,1))
     return NPL
 
 
     #India
 def IND():
-    IND=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5"
-    
-,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"IND",range(1990,2021,1))
+    IND=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"IND",range(1990,2021,1))
     return IND
 
 
@@ -1042,63 +797,37 @@ def IND():
     ## World CHN(China)-IND(India)-USA(United States)-IDN(Indonesia)-PAK(Pakistan)-BRA(Brasil)
     #USA
 def USA():
-    USA=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5"
-    
-,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"USA",range(1990,2021,1))
+    USA=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"USA",range(1990,2021,1))
     return USA
 
 
     #Indonesia
 def IDN():
-    IDN=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
- 
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5"
-    
-,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.DYN.NCOM.ZS","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"
+    IDN=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"
 ],"IDN",range(1990,2021,1))
     return IDN
 
@@ -1107,32 +836,19 @@ def IDN():
 
     #Singapur
 def SGP():
-    SGP=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5"
-    
-,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"],"SGP",range(1990,2021,1))
+    SGP=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"],"SGP",range(1990,2021,1))
     return SGP
 
 
@@ -1141,33 +857,27 @@ def SGP():
 
     #China
 def CHN():
-    CHN=wb.data.DataFrame(['SP.ADO.TFRT',
-    'SP.DYN.CBRT.IN',
-    
-    
-    'SH.XPD.CHEX.GD.ZS',
-    "SH.XPD.CHEX.PC.CD",
-    "SP.DYN.CDRT.IN",
-    "SP.DYN.TFRT.IN",
-    "SP.DYN.LE00.FE.IN",
-    "SP.DYN.LE00.MA.IN",
-    "SP.DYN.LE00.IN",
-    
-    "SP.DYN.AMRT.FE",
-    "SP.DYN.AMRT.MA",
-    "SP.DYN.IMRT.IN",
-    "SP.POP.GROW",
-    "SP.POP.TOTL.FE.IN",
-    "SP.POP.TOTL.MA.IN",
-    "SP.POP.TOTL",
-    "SH.STA.SUIC.P5",
-    "SH.STA.SUIC.FE.P5",
-    "SH.STA.SUIC.MA.P5"
-    
-,"SH.XPD.CHEX.GD.ZS","SH.XPD.CHEX.PC.CD",
-"NY.GDP.MKTP.KD","NY.GDP.MKTP.KN",
-"SH.STA.TRAF.P5","SH.HTN.PREV.ZS","SH.STA.OWAD.ZS"
+    CHN=wb.data.DataFrame(["SP.ADO.TFRT",
+"SP.DYN.CBRT.IN",
+"SH.XPD.CHEX.GD.ZS",
+"SH.XPD.CHEX.PC.CD",
+"SP.DYN.TFRT.IN",
+"SP.DYN.LE00.IN",
+"SP.DYN.IMRT.IN",
+"SP.POP.GROW",
+"SP.POP.TOTL",
+"SH.STA.SUIC.P5",
+"SP.DYN.CDRT.IN",
+"NY.GDP.MKTP.KD",
+"NY.GDP.MKTP.KN"
 ],"CHN",range(1990,2021,1))
     return CHN
     
     ##DATASETS------------------------------------------------------------------------------------------------------------------
+
+    #Graph Expectativa de vida(WORLD)
+GEVW=wb.data.DataFrame("SP.DYN.LE00.IN",wb.region.members('WLD'),range(1990,2020,1))
+GW=GEVW.transpose()
+
+GF=GW.rename(index={"YR1990":"1990","YR1991":"1991","YR1992":"1992","YR1993":"1993","YR1994":"1994","YR1995":"1995","YR1996":"1996","YR1997":"1997","YR1998":"1998","YR1999":"1999","YR2000":"2000","YR2001":"2001","YR2002":"2002","YR2003":"2003","YR2004":"2004","YR2005":"2005","YR2006":"2006","YR2007":"2007","YR2008":"2008","YR2009":"2009","YR2010":"2010","YR2011":"2011","YR2012":"2012","YR2013":"2013","YR2014":"2014","YR2015":"2015","YR2016":"2016","YR2017":"2017","YR2018":"2018","YR2019":"2019","YR2020":"2020","YR2021":"2021"})
+GF.index=GF.index.map(int)
