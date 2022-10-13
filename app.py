@@ -7,7 +7,6 @@ from Api import *
 from secrets import choice
 import pandas as pd
 import pickle
-from flask import Flask, request, jsonify, render_template, url_for
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from client import DEU, EGY, ETH, NGA, ROU, TZA, ZAF, lifexp,lifexpe,lifexpa,lifexpaf,lifexpo
