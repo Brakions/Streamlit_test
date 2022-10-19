@@ -8,60 +8,9 @@ from secrets import choice
 import pandas as pd
 import pickle
 from plotly.subplots import make_subplots
+from client import *
 import plotly.graph_objects as go
-from client import DEU, EGY, ETH, NGA, ROU, TZA, ZAF, lifexp,lifexpe,lifexpa,lifexpaf,lifexpo
-from client import BRA,COL,MEX,PER,CHL,ARG
-from client import ETH,ZAF,COD,TZA,EGY,NGA
-from client import POL,DEU,ESP,ITA,ROU,FRA
-from client import LKA,BGD,NPL,IND
-from client import CHN,USA,PAK,IDN,AFG
-#API IMPORT -------------------------------------------------------------------------------------------------------------------
-## Adolescent fertility rate (births per 1,000 women ages 15-19)
-from Api import AfrAFR,AfrCLA,AfrEUU,AfrSAS,AfrWLD
-## Birth rate, crude (per 1000 people)
-#from Api import BrcAFR,BrcCLA,BrcEUU,BrcSAS,BrcWLD
-## Births attended by skilled health staff (% of total)
-from Api import BashAFR,BashCLA,BashEUU,BashSAS,BashWLD
-## Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)
-from Api import CodpnAFR,CodpnCLA,CodpnEUU,CodpnSAS,CodpnWLD
-## Current health expenditure (% of GDP)
-from Api import CuheAFR,CuheCLA,CuheEUU,CuheSAS,CuheWLD
-## Current health expenditure per capita (current US$)
-from Api import CuhepcAFR,CuhepcCLA,CuhepcEUU,CuhepcSAS,CuhepcWLD
-## Death rate, crude (per 1,000 people)
-from Api import DrcmAFR,DrcmCLA,DrcmWLD,DrcmEUU,DrcmSAS
-## Fertility rate, total (births per woman)
-from Api import FrtbAFR,FrtbCLA,FrtbEUU,FrtbSAS,FrtbWLD
-## Life expectancy at birth, female (years)
-from Api import LebfCLA,LebfAFR,LebfEUU,LebfSAS,LebfWLD
-## Life expectancy at birth, male (years)
-from Api import LebmAFR,LebmCLA,LebmEUU,LebmSAS,LebmWLD
-## Life expectancy at birth, total (years)
-from Api import LebCLA,LebAFR,LebEUU,LebSAS,LebWLD
-## Low-birthweight babies (% of births)
-from Api import LbbAFR,LbbCLA,LbbEUU,LbbSAS,LbbWLD
-## Mortality rate, adult, female (per 1,000 female adults)
-from Api import MrafAFR,MrafCLA,MrafEUU,MrafSAS,MrafWLD
-## Mortality rate, adult, male (per 1,000 male adults)
-from Api import MramAFR,MramCLA,MramEUU,MramSAS,MramWLD
-## Mortality rate, infant (per 1,000 live births)
-from Api import MriAFR,MriCLA,MriEUU,MriSAS,MriWLD
-## Population growth (annual %)
-from Api import PgaAFR,PgaCLA,PgaEUU,PgaSAS,PgaWLD
-## Population, female
-from Api import PfAFR,PfCLA,PfEUU,PfSAS,PfWLD
-# Population, male
-from Api import PmAFR,PmCLA,PmEUU,PmSAS,PmWLD
-## Population, total
-from Api import PtAFR,PtCLA,PtEUU,PtSAS,PtWLD
-## Suicide mortality rate (per 100,000 population)
-from Api import SmrEUU,SmrAFR,SmrCLA,SmrSAS,SmrWLD
-## Suicide mortality rate, female (per 100,000 female population)
-from Api import SmrfAFR,SmrfCLA,SmrfEUU,SmrfSAS,SmrfWLD
-## Suicide mortality rate, male (per 100,000 male population)
-from Api import SmrmAFR,SmrmCLA,SmrmEUU,SmrmSAS,SmrmWLD
-## Wanted fertility rate (births per woman)
-from Api import WfrAFR,WfrCLA,WfrEUU,WfrSAS,WfrWLD
+
 #API IMPORT -------------------------------------------------------------------------------------------------------------------
 def main():
     techo=["Off","model"]
@@ -125,7 +74,7 @@ def main():
  
     ##-------------------------------------------------------------------------------------------------------------------------
 
-    casa=["Off","Series"]
+    casa=["Off","Series","Series (Final)"]
     choice = st.sidebar.selectbox("Stats Explorer",casa)
     if choice == "Off":
       st.title(" ")
@@ -231,7 +180,35 @@ def main():
 
          st.write(result())   
 
-         
+    if choice == "Series (Final)":
+            st.title("Series Stats Explorer")
+            st.markdown('''
+            Esta aplicación realiza una exploracion simple de datos estadísticos que tienen impacto en la  esperanza de vida !
+            * **Python libraries:** pandas, streamlit, wbgapi 
+            * **Data source:** https://www.worldbank.org/en/home''')
+            st.subheader("Datasets (Region)")
+            with st.form(key="searchform2"):
+                nav1,nav2,nav3 = st.columns([3,2,1])
+                Rgnes=["Latin America & Caribeann","Africa","European Union","South Asia","World"]
+
+                Paises=[]
+            with nav1:
+                    search_term2 =st.selectbox("Select Region :",Rgnes)
+                    def result():  
+                     if search_term2 =="Latin America & Caribeann":
+                           return(CLA4)
+                     if search_term2 =="Africa":
+                           return(AFR4)
+                     if search_term2 =="European Union":
+                           return(EUU4)
+                     if search_term2 =="South Asia":
+                           return(SAS4)
+                     if search_term2 =="World":
+                           return(WLD4)
+            st.write(result())
+            with nav2:
+               
+               submit_search = st.form_submit_button()
          #----------------------------------------------------------------------------------------------------------------------
     menu = ["Off","Life Expectancy-Regions","Info","Datasets"]
     choice = st.sidebar.selectbox("Proyeccion + Datasets (Semana 1)",menu)
@@ -280,13 +257,12 @@ def main():
                         "Mortality rate, infant (per 1,000 live births)",
                         "Population growth (annual %)",
                         "Population, total",
-                        "Suicide mortality rate (per 100,000 population)",
-                        "(constant 2015 US$)",
-                        "GDP(constant LCU)"]
+                        "Suicide mortality rate (per 100,000 population)"]
                 Regiones=["World(WLD)","Latin America and the Caribbean(CLA)",
                             "Africa(AFR)","European Union(EUU)","South Asia(SAS)"]
                 with nav1:
                     search_term =st.selectbox("Select Serie :",Series)
+                    
                     #Adolescent fertility rate (ages 15-19)
                     def result():
                         
@@ -606,7 +582,239 @@ def main():
                 with nav3:    
                     submit_search = st.form_submit_button()
    
-   
+    menu2 = ["Off","Series x Region"]
+    choice = st.sidebar.selectbox("Graficas x Series",menu2)
+    if choice == "Series x Region":
+
+            st.subheader("Series x Region")
+            # Nav Search Form
+            with st.form(key="searchformZ"):
+                nav1,nav2,nav3 = st.columns([3,2,1])
+                Series=["Adolescent fertility rate (ages 15-19)"
+                        ,"Birth rate, crude (per 1000 people)",
+                        "Current health expenditure (%) of GDP",
+                        "Current health expenditure per capita (current US$)",
+                        "Fertility rate, total (births per woman)",
+                        "Life expectancy at birth, total (years)",
+                        "Mortality rate, infant (per 1,000 live births)",
+                        "Population growth (annual %)",
+                        "Population, total",
+                        "Suicide mortality rate (per 100,000 population)",
+                        "(constant LCU)"]
+                Regiones=["World(WLD)","Latin America and the Caribbean(CLA)",
+                            "Africa(AFR)","European Union(EUU)","South Asia(SAS)"]
+                with nav1:
+                    search_term =st.selectbox("Select Serie :",Series)
+                    Regions3=["World(WLD)","Latin America and the Caribbean(CLA)",
+                            "Africa(AFR)","European Union(EUU)","South Asia(SAS)"]
+                    #Adolescent fertility rate (ages 15-19)
+                    def result():
+                        
+                        if search_term =="Adolescent fertility rate (ages 15-19)" and Regiones == "World(WLD)":
+                           return WLDgZ() 
+                        if search_term =="Adolescent fertility rate (ages 15-19)" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return ClagZ()
+                        if search_term =="Adolescent fertility rate (ages 15-19)" and Regiones == "Africa(AFR)":
+                           return AfrgZ()
+                        if search_term =="Adolescent fertility rate (ages 15-19)" and Regiones == "European Union(EUU)":
+                           return EUUgZ()
+                        if search_term =="Adolescent fertility rate (ages 15-19)" and Regiones == "South Asia(SAS)":
+                           return SASgZ()
+                    #Birth rate, crude (per 1000 people)
+                   
+                        if search_term =="Birth rate, crude (per 1000 people)" and Regiones == "World(WLD)":
+                           return WLDbgZ() 
+                        if search_term =="Birth rate, crude (per 1000 people)" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return ClagbZ()
+                        if search_term =="Birth rate, crude (per 1000 people)" and Regiones == "Africa(AFR)":
+                           return AfrbgZ()
+                        if search_term =="Birth rate, crude (per 1000 people)" and Regiones == "European Union(EUU)":
+                           return EUUbgZ()
+                        if search_term =="Birth rate, crude (per 1000 people)" and Regiones == "South Asia(SAS)":
+                           return SASbgZ()
+
+                    #Births attended by skilled health staff (%)
+                   
+                        if search_term =="Births attended by skilled health staff (%)" and Regiones == "World(WLD)":
+                           return BashWLD() 
+                        if search_term =="Births attended by skilled health staff (%)" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return BashCLA()
+                        if search_term =="Births attended by skilled health staff (%)" and Regiones == "Africa(AFR)":
+                           return BashAFR()
+                        if search_term =="Births attended by skilled health staff (%)" and Regiones == "European Union(EUU)":
+                           return BashEUU()
+                        if search_term =="Births attended by skilled health staff (%)" and Regions == "South Asia(SAS)":
+                           return BashSAS()
+
+                    #Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (%) of total
+                   
+                        if search_term =="Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (%) of total" and Regiones == "World(WLD)":
+                           return CodpnWLD() 
+                        if search_term =="Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (%) of total" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return CodpnCLA()
+                        if search_term =="Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (%) of total" and Regiones == "Africa(AFR)":
+                           return CodpnAFR()
+                        if search_term =="Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (%) of total" and Regiones == "European Union(EUU)":
+                           return CodpnEUU()
+                        if search_term =="Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (%) of total" and Regiones == "South Asia(SAS)":
+                           return CodpnSAS()
+                    
+                    
+                    #Current health expenditure (%) of GDP
+                   
+                        if search_term =="Current health expenditure (%) of GDP" and Regiones == "World(WLD)":
+                           return WLDchZ() 
+                        if search_term =="Current health expenditure (%) of GDP" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return ClagchZ()
+                        if search_term =="Current health expenditure (%) of GDP" and Regiones == "Africa(AFR)":
+                           return AfrchZ()
+                        if search_term =="Current health expenditure (%) of GDP" and Regiones == "European Union(EUU)":
+                           return EUUchZ()
+                        if search_term =="Current health expenditure (%) of GDP" and Regiones == "South Asia(SAS)":
+                           return SASchZ()
+                    
+                    #Current health expenditure per capita (current US$)
+                   
+                        if search_term =="Current health expenditure per capita (current US$)" and Regiones == "World(WLD)":
+                           return WLDchcZ() 
+                        if search_term =="Current health expenditure per capita (current US$)" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return ClagchcZ()
+                        if search_term =="Current health expenditure per capita (current US$)" and Regiones == "Africa(AFR)":
+                           return AfrchcZ()
+                        if search_term =="Current health expenditure per capita (current US$)" and Regiones == "European Union(EUU)":
+                           return EUUchcZ()
+                        if search_term =="Current health expenditure per capita (current US$)" and Regiones == "South Asia(SAS)":
+                           return SASchcZ()
+
+                    #Fertility rate, total (births per woman)
+                   
+                        if search_term =="Fertility rate, total (births per woman)" and Regiones == "World(WLD)":
+                           return WLDfrZ() 
+                        if search_term =="Fertility rate, total (births per woman)" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return ClagfrZ()
+                        if search_term =="Fertility rate, total (births per woman)" and Regiones == "Africa(AFR)":
+                           return AfrfrZ()
+                        if search_term =="Fertility rate, total (births per woman)" and Regiones == "European Union(EUU)":
+                           return EUUfrZ()
+                        if search_term =="Fertility rate, total (births per woman)" and Regiones == "South Asia(SAS)":
+                           return SASfrZ()
+
+                    
+
+                    #Life expectancy at birth, total (years)
+                   
+                        if search_term =="Life expectancy at birth, total (years)" and Regiones == "World(WLD)":
+                           return WLDleZ()
+                        if search_term =="Life expectancy at birth, total (years)" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return ClagleZ()
+                        if search_term =="Life expectancy at birth, total (years)" and Regiones == "Africa(AFR)":
+                           return Afrle()
+                        if search_term =="Life expectancy at birth, total (years)" and Regiones == "European Union(EUU)":
+                           return EUUleZ()
+                        if search_term =="Life expectancy at birth, total (years)" and Regiones == "South Asia(SAS)":
+                           return SASleZ()
+
+      
+
+                    
+
+                    #Mortality rate, infant (per 1,000 live births)
+                   
+                        if search_term =="Mortality rate, infant (per 1,000 live births)" and Regiones == "World(WLD)":
+                           return WLDmrZ() 
+                        if search_term =="Mortality rate, infant (per 1,000 live births)" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return ClagmrZ()
+                        if search_term =="Mortality rate, infant (per 1,000 live births)" and Regiones == "Africa(AFR)":
+                           return AfrmrZ()
+                        if search_term =="Mortality rate, infant (per 1,000 live births)" and Regiones == "European Union(EUU)":
+                           return EUUmrZ()
+                        if search_term =="Mortality rate, infant (per 1,000 live births)" and Regiones == "South Asia(SAS)":
+                           return SASmrZ()
+                    
+
+                    #Population growth (annual %)
+                   
+                        if search_term =="Population growth (annual %)" and Regiones == "World(WLD)":
+                           return WLDpwZ() 
+                        if search_term =="Population growth (annual %)" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return ClagpwZ()
+                        if search_term =="Population growth (annual %)" and Regiones == "Africa(AFR)":
+                           return AfrpwZ()
+                        if search_term =="Population growth (annual %)" and Regiones == "European Union(EUU)":
+                           return EUUpwZ()
+                        if search_term =="Population growth (annual %)" and Regiones == "South Asia(SAS)":
+                           return SASpwZ()
+
+
+                    
+
+
+
+                #Population, total
+                   
+                        if search_term =="Population, total" and Regiones == "World(WLD)":
+                           return WLDptZ() 
+                        if search_term =="Population, total" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return ClaptZ()
+                        if search_term =="Population, total" and Regiones == "Africa(AFR)":
+                           return AfrptZ()
+                        if search_term =="Population, total" and Regiones == "European Union(EUU)":
+                           return EUUptZ()
+                        if search_term =="Population, total" and Regiones == "South Asia(SAS)":
+                           return SASptZ()
+
+                
+                #Suicide mortality rate (per 100,000 population)
+                   
+                        if search_term =="Suicide mortality rate (per 100,000 population)" and Regiones == "World(WLD)":
+                           return WLDsmZ() 
+                        if search_term =="Suicide mortality rate (per 100,000 population)" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return ClasmZ()
+                        if search_term =="Suicide mortality rate (per 100,000 population)" and Regiones == "Africa(AFR)":
+                           return AfrsmZ()
+                        if search_term =="Suicide mortality rate (per 100,000 population)" and Regiones == "European Union(EUU)":
+                           return EUUsmZ()
+                        if search_term =="Suicide mortality rate (per 100,000 population)" and Regiones == "South Asia(SAS)":
+                           return SASsmZ()
+
+
+            
+
+
+                #(constant LCU)
+                   
+                        if search_term =="(constant LCU)" and Regiones == "World(WLD)":
+                           return WLDgdpZ() 
+                        if search_term =="(constant LCU)" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return ClagdpZ()
+                        if search_term =="(constant LCU)" and Regiones == "Africa(AFR)":
+                           return AFRgdpZ()
+                        if search_term =="(constant LCU)" and Regiones == "European Union(EUU)":
+                           return EUUgdpZ()
+                        if search_term =="(constant LCU)" and Regiones == "South Asia(SAS)":
+                           return SASgdpZ()
+
+
+                #Wanted fertility rate (births per woman)
+                   
+                        if search_term =="Wanted fertility rate (births per woman)" and Regiones == "World(WLD)":
+                           return WfrWLD() 
+                        if search_term =="Wanted fertility rate (births per woman)" and Regiones == "Latin America and the Caribbean(CLA)":
+                           return WfrCLA()
+                        if search_term =="Wanted fertility rate (births per woman)" and Regiones == "Africa(AFR)":
+                           return WfrAFR()
+                        if search_term =="Wanted fertility rate (births per woman)" and Regiones == "European Union(EUU)":
+                           return WfrEUU()
+                        if search_term =="Wanted fertility rate (births per woman)" and Regiones == "South Asia(SAS)":
+                           return WfrSAS()
+                
+                with nav3:    
+                    submit_search = st.form_submit_button()
+                #st.write(result())
+                with nav2:
+                        Regiones = st.selectbox("Regions :",Regions3)
+                st.write(result())        
+                        
    
 if __name__ =="__main__":
     main()
