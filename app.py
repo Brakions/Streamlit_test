@@ -20,7 +20,7 @@ def main():
     
     ##-------------------------------------------------------------------------------------------------------------------------
       # Path del modelo preentrenado
-    MODEL_PATH = 'pickle_model.pkl'
+    MODEL_PATH = 'pickle_model2020.pkl'
     
             
     def model_prediction(x_in, model):
@@ -39,17 +39,19 @@ def main():
 
       # Lecctura de datos
       #Datos = st.text_input
-        A = st.text_input("GDP (constant 2015 US$):")
-        B = st.text_input("GDP (constant LCU):")
-        C = st.text_input("Suicide mortality rate (per 100,000 population):")
-        D = st.text_input("Current health expenditure (%) of GDP:")
-        E = st.text_input("Current health expenditure per capita (current US$)")
-        F = st.text_input("Adolescent fertility rate :")
-        G = st.text_input("Birth rate, crude (per 1000 people):")
-        H = st.text_input("Mortality rate, infant (per 1,000 live births):")
-        I = st.text_input("Fertility rate, total :")
-        J = st.text_input("Population growth (annual %):")
-        K = st.text_input("Population, total")
+        A = st.text_input("Current health expenditure per capita (current US$)")
+        B = st.text_input("Current health expenditure (%) of GDP:")
+        C = st.text_input("Adolescent fertility rate :")
+        D = st.text_input("Population, total :")
+        E = st.text_input("Birth rate, crude (per 1000 people):")
+        F = st.text_input("Fertility rate, total (births per woman):")
+        G = st.text_input("Mortality rate, infant (per 1,000 live births):")
+        H = st.text_input("Suicide mortality rate:")
+        I = st.text_input("Prevalence of overweight among adults :")
+        J = st.text_input("GDP per capita:")
+        K = st.text_input("GDP current($)")
+        L = st.text_input("Prevalence of hypertension")
+        M = st.text_input("Population growth(%)")
        
     
       
@@ -66,7 +68,9 @@ def main():
                     np.float_(H.title()),
                     np.float_(I.title()),
                     np.float_(J.title()),
-                    np.float_(K.title()),]
+                    np.float_(K.title()),
+                    np.float_(L.title()),
+                    np.float_(M.title()),]
                     
             predictS = model_prediction(x_in, model)
             st.success('La Esperanza de vida es: {}'.format(predictS[0]).upper())
