@@ -11,10 +11,57 @@ from plotly.subplots import make_subplots
 from client import *
 import plotly.graph_objects as go
 
+
 #API IMPORT -------------------------------------------------------------------------------------------------------------------
+st.set_page_config(
+    page_title="Indata", layout="wide",
+    page_icon="💚",
+)
+import base64
+
+main_bg = "earth-leaf-greenery-wallpaper-preview.jpg"
+main_bg_ext = "jpg"
+
+side_bg = "earth-leaf-greenery-wallpaper-preview.jpg"
+side_bg_ext = "jpg"
+
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://im4.ezgif.com/tmp/ezgif-4-3ad9b35f36.gif");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+add_bg_from_url() 
+def sidebar_bg(side_bg):
+
+   side_bg_ext = 'gif'
+
+   st.markdown(
+      f"""
+      <style>
+      [data-testid="stSidebar"] > div:first-child {{
+          background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()});
+      }}
+      </style>
+      """,
+      unsafe_allow_html=True,
+      )
+side_bg = 'giphy.gif'
+sidebar_bg(side_bg)
+   
 def main():
-    techo=["Off","model"]
-    choice = st.sidebar.selectbox("Prediction",techo)
+    techo=["Off","🔲 model"]
+    choice = st.sidebar.selectbox("🔺Prediction",techo)
+    
+    
     if choice == "Off":
       st.title("")
     
@@ -30,8 +77,8 @@ def main():
 
                return preds
     
-    if choice == "model":
-        st.title("Life Expentancy Predict")
+    if choice == "🔲 model":
+        st.title("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=27&pause=100000&color=F79213&width=435&lines=Life+Expentancy+Predict)](https://git.io/typing-svg)")
         # Se carga el modelo
         with open(MODEL_PATH, 'rb') as file:
             model = pickle.load(file)
@@ -78,12 +125,12 @@ def main():
  
     ##-------------------------------------------------------------------------------------------------------------------------
 
-    casa=["Off","Series","Series (Final)"]
-    choice = st.sidebar.selectbox("Stats Explorer",casa)
+    casa=["Off","🔲 Series","🔲 Series (Final)"]
+    choice = st.sidebar.selectbox("🔺Stats Explorer",casa)
     if choice == "Off":
-      st.title(" ")
-    if choice == "Series":
-         st.title("Series Stats Explorer")
+      st.title("  ")
+    if choice == "🔲 Series":
+         st.title("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=35&pause=100000&color=F79213&width=435&lines=Series+Stats+Explorer)](https://git.io/typing-svg)")
          st.markdown('''
          Esta aplicación realiza una exploracion simple de datos estadísticos que tienen impacto en la  esperanza de vida !
          * **Python libraries:** pandas, streamlit, wbgapi 
@@ -184,8 +231,8 @@ def main():
 
          st.write(result())   
 
-    if choice == "Series (Final)":
-            st.title("Series Stats Explorer")
+    if choice == "🔲 Series (Final)":
+            st.title("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=35&pause=100000&color=F79213&width=435&lines=Series+Stats+Explorer)](https://git.io/typing-svg)")
             st.markdown('''
             Esta aplicación realiza una exploracion simple de datos estadísticos que tienen impacto en la  esperanza de vida !
             * **Python libraries:** pandas, streamlit, wbgapi 
@@ -214,13 +261,13 @@ def main():
                
                submit_search = st.form_submit_button()
          #----------------------------------------------------------------------------------------------------------------------
-    menu = ["Off","Life Expectancy-Regions","Info","Datasets"]
-    choice = st.sidebar.selectbox("Proyeccion + Datasets (Semana 1)",menu)
+    menu = ["Off","🔲 Life Expectancy-Regions","🔲 Info","🔲 Datasets"]
+    choice = st.sidebar.selectbox("🔺Proyeccion + Datasets (Semana 1)",menu)
     
     if choice == "Off":
-      st.title(" ")
-    if choice == "Life Expectancy-Regions":
-            st.title("Life Expectancy")
+      st.title("")
+    if choice == "🔲 Life Expectancy-Regions":
+            st.title("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=35&pause=100000&color=F79213&width=435&lines=Life+Expectancy)](https://git.io/typing-svg)")
             st.subheader("Regiones")
             if st.checkbox("Latin America & Caribeann"):
                 st.write(lifexp())
@@ -235,7 +282,7 @@ def main():
     
         
             
-    if choice == "Info":
+    if choice == "🔲 Info":
 
             st.subheader("Info")
             if st.checkbox("Regions"):
@@ -246,7 +293,7 @@ def main():
             if st.checkbox("Series"):
                 st.write(wb.series.info())
 
-    if choice == "Datasets":
+    if choice == "🔲 Datasets":
 
             st.subheader("Datasets")
             # Nav Search Form
@@ -586,11 +633,11 @@ def main():
                 with nav3:    
                     submit_search = st.form_submit_button()
    
-    menu2 = ["Off","Series x Region"]
-    choice = st.sidebar.selectbox("Graficas x Series",menu2)
-    if choice == "Series x Region":
+    menu2 = ["Off","🔲 Series x Region"]
+    choice = st.sidebar.selectbox("🔺Graficas x Series",menu2)
+    if choice == "🔲 Series x Region":
 
-            st.subheader("Series x Region")
+            st.subheader("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=25&pause=100000&color=F79213&width=435&lines=Select+Serie+%3A)](https://git.io/typing-svg)")
             # Nav Search Form
             with st.form(key="searchformZ"):
                 nav1,nav2,nav3 = st.columns([3,2,1])
