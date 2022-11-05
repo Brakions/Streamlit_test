@@ -30,7 +30,7 @@ def add_bg_from_url():
          f"""
          <style>
          .stApp {{
-             background-image: url("https://im4.ezgif.com/tmp/ezgif-4-3ad9b35f36.gif");
+             background-image: url("https://user-images.githubusercontent.com/93687273/200126084-9b30c9c0-ac20-4ef2-be1d-05108f944be3.gif");
              background-attachment: fixed;
              background-size: cover
          }}
