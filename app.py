@@ -10,6 +10,7 @@ import pickle
 from plotly.subplots import make_subplots
 from client import *
 import plotly.graph_objects as go
+import math
 
 
 #API IMPORT -------------------------------------------------------------------------------------------------------------------
@@ -30,7 +31,7 @@ def add_bg_from_url():
          f"""
          <style>
          .stApp {{
-             background-image: url("https://user-images.githubusercontent.com/93687273/200126084-9b30c9c0-ac20-4ef2-be1d-05108f944be3.gif");
+             background-image: url("https://user-images.githubusercontent.com/93687273/217873392-7fee4e67-6c2e-401b-bb81-229509cdca67.jpg");
              background-attachment: fixed;
              background-size: cover
          }}
@@ -69,7 +70,15 @@ def main():
       # Path del modelo preentrenado
     MODEL_PATH = 'pickle_model2020.pkl'
     
-            
+    #Funcion st.write para slides
+    def fin(x):
+      if x <0:
+         st.write("Disminuir en ", (abs(x)*100/3),"%")
+      elif x==0:
+            st.write("Sin cambios")
+      else:
+            st.write("Aumentar en",(abs(x)*100/3),"%")
+
     def model_prediction(x_in, model):
 
                x = np.asarray(x_in).reshape(1,-1)
@@ -83,41 +92,57 @@ def main():
         with open(MODEL_PATH, 'rb') as file:
             model = pickle.load(file)
     
-
+    
+            
       # Lecctura de datos
       #Datos = st.text_input
-        A = st.text_input("Current health expenditure per capita (current US$)")
-        B = st.text_input("Current health expenditure (%) of GDP:")
-        C = st.text_input("Adolescent fertility rate :")
-        D = st.text_input("Population, total :")
-        E = st.text_input("Birth rate, crude (per 1000 people):")
-        F = st.text_input("Fertility rate, total (births per woman):")
-        G = st.text_input("Mortality rate, infant (per 1,000 live births):")
-        H = st.text_input("Suicide mortality rate:")
-        I = st.text_input("Prevalence of overweight among adults :")
-        J = st.text_input("GDP per capita:")
-        K = st.text_input("GDP current($)")
-        L = st.text_input("Prevalence of hypertension")
-        M = st.text_input("Population growth(%)")
+        
+        
+        A = st.slider("Current health expenditure per capita (current US$)",min_value =-3.00,max_value=3.00,step= 0.01)
+        fin(A)
+        B = st.slider("Current health expenditure (%) of GDP:",min_value =-3.00,max_value=3.00,step= 0.01)
+        fin(B)
+        C = st.slider("Adolescent fertility rate :",min_value =-3.00,max_value=3.00,step= 0.01)
+        fin(C)
+        D = st.slider("Population, total :",min_value =-3.00,max_value=3.00,step= 0.01)
+        fin(D)
+        E = st.slider("Birth rate, crude (per 1000 people):",min_value =-3.00,max_value=3.00,step= 0.01)
+        fin(E)
+        F = st.slider("Fertility rate, total (births per woman):",min_value =-3.00,max_value=3.00,step= 0.01)
+        fin(F)
+        G = st.slider("Mortality rate, infant (per 1,000 live births):",min_value =-3.00,max_value=3.00,step= 0.01)
+        fin(G)
+        H = st.slider("Suicide mortality rate:",min_value =-3.00,max_value=3.00,step= 0.01)
+        fin(H)
+        I = st.slider("Prevalence of overweight among adults :",min_value =-3.00,max_value=3.00,step= 0.01)
+        fin(I)
+        J = st.slider("GDP per capita:",min_value =-3.00,max_value=3.00,step= 0.01)
+        fin(J)
+        K = st.slider("GDP current($)",min_value =-3.00,max_value=3.00,step= 0.01)
+        fin(K)
+        L = st.slider("Prevalence of hypertension",min_value =-3.00,max_value=3.00,step= 0.01)
+        fin(L)
+        M = st.slider("Population growth(%)",min_value =-3.00,max_value=3.00,step= 0.01)
+        fin(M)
        
     
       
       # El botón predicción se usa para iniciar el procesamiento
         if st.button("Predicción :"): 
         #x_in = list(np.float_((Datos.title().split('\t'))))
-            x_in =[np.float_(A.title()),
-                    np.float_(B.title()),
-                    np.float_(C.title()),
-                    np.float_(D.title()),
-                    np.float_(E.title()),
-                    np.float_(F.title()),
-                    np.float_(G.title()),
-                    np.float_(H.title()),
-                    np.float_(I.title()),
-                    np.float_(J.title()),
-                    np.float_(K.title()),
-                    np.float_(L.title()),
-                    np.float_(M.title()),]
+            x_in =[np.float_(A),
+                    np.float_(B),
+                    np.float_(C),
+                    np.float_(D),
+                    np.float_(E),
+                    np.float_(F),
+                    np.float_(G),
+                    np.float_(H),
+                    np.float_(I),
+                    np.float_(J),
+                    np.float_(K),
+                    np.float_(L),
+                    np.float_(M),]
                     
             predictS = model_prediction(x_in, model)
             st.success('La Esperanza de vida es: {}'.format(predictS[0]).upper())
