@@ -11,6 +11,8 @@ from plotly.subplots import make_subplots
 from client import *
 import plotly.graph_objects as go
 import math
+from colorama import init,Fore,Style
+init()
 
 
 #API IMPORT -------------------------------------------------------------------------------------------------------------------
@@ -59,12 +61,19 @@ side_bg = 'giphy.gif'
 sidebar_bg(side_bg)
    
 def main():
-    techo=["Off","🔲 model"]
-    choice = st.sidebar.selectbox("🔺Prediction",techo)
+    techo=[" ","🔲 model"]
+    choice = st.sidebar.selectbox("🔺Prediction",techo,index=0)
+    with st.sidebar:
+         add_radio = st.radio(
+            "Choose :",
+            ("Mostrar", "No Mostrar")
+         )
     
     
-    if choice == "Off":
+    if choice == " ":
       st.title("")
+    if add_radio == "No Mostrar":
+       choice = " "
     
     ##-------------------------------------------------------------------------------------------------------------------------
       # Path del modelo preentrenado
@@ -88,6 +97,10 @@ def main():
     
     if choice == "🔲 model":
         st.title("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=27&pause=100000&color=F79213&width=435&lines=Life+Expentancy+Predict)](https://git.io/typing-svg)")
+        st.write("Este apartado se utiliza para predecir la espectativa de vida en años, para el entrenamiento se estadarizaron los datos numericos en una escala de :","-3.00 a 3.00 , en color 'verde' se puede indentificar a las variables que su valor es directamente proporcional a la expectativa de vida y en color 'rojo' su contraparte.")
+        
+        st.write(" ")
+        st.write(" ")
         # Se carga el modelo
         with open(MODEL_PATH, 'rb') as file:
             model = pickle.load(file)
@@ -96,33 +109,58 @@ def main():
             
       # Lecctura de datos
       #Datos = st.text_input
-        
-        
-        A = st.slider("Current health expenditure per capita (current US$)",min_value =-3.00,max_value=3.00,step= 0.01)
+        st.write(" ")
+        st.write(" ")
+        st.write("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rajdhani&size=16&pause=100000&color=00F7E4FF&background=000000&vCenter=true&width=438&height=24&lines=Current+health+expenditure+per+capita+(current+US%24))](https://git.io/typing-svg)")
+        A = st.slider("",min_value =-3.00,max_value=3.00,step= 0.01,value=0.00)
         fin(A)
-        B = st.slider("Current health expenditure (%) of GDP:",min_value =-3.00,max_value=3.00,step= 0.01)
+        st.write(" ")
+        st.write("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rajdhani&size=16&pause=100000&color=00F7E4FF&background=000000&vCenter=true&width=438&height=24&lines=Current+health+expenditure+(%25)+of+GDP%3A)](https://git.io/typing-svg)")
+        B = st.slider(" ",min_value =-3.00,max_value=3.00,step= 0.01,value =0.00)
         fin(B)
-        C = st.slider("Adolescent fertility rate :",min_value =-3.00,max_value=3.00,step= 0.01)
+        st.write(" ")
+        st.write("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rajdhani&size=16&pause=100000&color=F70000&background=000000&vCenter=true&width=438&height=24&lines=Adolescent+fertility+rate+%3A)](https://git.io/typing-svg)")
+        C = st.slider("   ",min_value =-3.00,max_value=3.00,step= 0.01,value =0.00)
         fin(C)
-        D = st.slider("Population, total :",min_value =-3.00,max_value=3.00,step= 0.01)
+        st.write(" ")
+        st.write("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rajdhani&size=16&pause=100000&color=F70000&background=000000&vCenter=true&width=438&height=24&lines=Population%2C+total+%3A)](https://git.io/typing-svg)")
+        D = st.slider("    ",min_value =-3.00,max_value=3.00,step= 0.01,value =0.00)
         fin(D)
-        E = st.slider("Birth rate, crude (per 1000 people):",min_value =-3.00,max_value=3.00,step= 0.01)
+        st.write(" ")
+        st.write("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rajdhani&size=16&pause=100000&color=F70000&background=000000&vCenter=true&width=438&height=24&lines=Birth+rate%2C+crude+(per+1000+people)%3A)](https://git.io/typing-svg)")
+        E = st.slider("     ",min_value =-3.00,max_value=3.00,step= 0.01,value =0.00)
         fin(E)
-        F = st.slider("Fertility rate, total (births per woman):",min_value =-3.00,max_value=3.00,step= 0.01)
+        st.write(" ")
+        st.write("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rajdhani&size=16&pause=100000&color=F70000&background=000000&vCenter=true&width=438&height=24&lines=Fertility+rate%2C+total+(births+per+woman)%3A)](https://git.io/typing-svg)")
+        F = st.slider("      ",min_value =-3.00,max_value=3.00,step= 0.01,value =0.00)
         fin(F)
-        G = st.slider("Mortality rate, infant (per 1,000 live births):",min_value =-3.00,max_value=3.00,step= 0.01)
+        st.write(" ")
+        st.write("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rajdhani&size=16&pause=100000&color=F70000&background=000000&vCenter=true&width=438&height=24&lines=Mortality+rate%2C+infant+(per+1%2C000+live+births)%3A)](https://git.io/typing-svg)")
+        G = st.slider("       ",min_value =-3.00,max_value=3.00,step= 0.01,value =0.00)
         fin(G)
-        H = st.slider("Suicide mortality rate:",min_value =-3.00,max_value=3.00,step= 0.01)
+        st.write(" ")
+        st.write("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rajdhani&size=16&pause=100000&color=00F7E4FF&background=000000&vCenter=true&width=438&height=24&lines=Suicide+mortality+rate%3A)](https://git.io/typing-svg)")
+        H = st.slider("             ",min_value =-3.00,max_value=3.00,step= 0.01,value =0.00)
         fin(H)
-        I = st.slider("Prevalence of overweight among adults :",min_value =-3.00,max_value=3.00,step= 0.01)
+        st.write(" ")
+        st.write("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rajdhani&size=16&pause=100000&color=00F7E4FF&background=000000&vCenter=true&width=438&height=24&lines=Prevalence+of+overweight+among+adults+%3A)](https://git.io/typing-svg)")
+        I = st.slider("              ",min_value =-3.00,max_value=3.00,step= 0.01,value =0.00)
         fin(I)
-        J = st.slider("GDP per capita:",min_value =-3.00,max_value=3.00,step= 0.01)
+        st.write(" ")
+        st.write("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rajdhani&size=16&pause=100000&color=00F7E4FF&background=000000&vCenter=true&width=438&height=24&lines=GDP+per+capita%3A)](https://git.io/typing-svg)")
+        J = st.slider("               ",min_value =-3.00,max_value=3.00,step= 0.01,value =0.00)
         fin(J)
-        K = st.slider("GDP current($)",min_value =-3.00,max_value=3.00,step= 0.01)
+        st.write(" ")
+        st.write("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rajdhani&size=16&pause=100000&color=00F7E4FF&background=000000&vCenter=true&width=438&height=24&lines=GDP+current(%24))](https://git.io/typing-svg)")
+        K = st.slider("                  ",min_value =-3.00,max_value=3.00,step= 0.01,value =0.00)
         fin(K)
-        L = st.slider("Prevalence of hypertension",min_value =-3.00,max_value=3.00,step= 0.01)
+        st.write(" ")
+        st.write("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rajdhani&size=16&pause=100000&color=F70000&background=000000&vCenter=true&width=438&height=24&lines=Prevalence+of+hypertension)](https://git.io/typing-svg)")
+        L = st.slider("                   ",min_value =-3.00,max_value=3.00,step= 0.01,value =0.00)
         fin(L)
-        M = st.slider("Population growth(%)",min_value =-3.00,max_value=3.00,step= 0.01)
+        st.write(" ")
+        st.write("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rajdhani&size=16&pause=100000&color=00F7E4FF&background=000000&vCenter=true&width=438&height=24&lines=Population+growth(%25))](https://git.io/typing-svg)")
+        M = st.slider("                    ",min_value =-3.00,max_value=3.00,step= 0.01,value =0.00)
         fin(M)
        
     
@@ -150,10 +188,12 @@ def main():
  
     ##-------------------------------------------------------------------------------------------------------------------------
 
-    casa=["Off","🔲 Series","🔲 Series (Final)"]
+    casa=[" ","🔲 Series","🔲 Series (Final)"]
     choice = st.sidebar.selectbox("🔺Stats Explorer",casa)
-    if choice == "Off":
-      st.title("  ")
+    
+    if choice == " ":
+      st.title("")
+      
     if choice == "🔲 Series":
          st.title("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=35&pause=100000&color=F79213&width=435&lines=Series+Stats+Explorer)](https://git.io/typing-svg)")
          st.markdown('''
@@ -286,10 +326,10 @@ def main():
                
                submit_search = st.form_submit_button()
          #----------------------------------------------------------------------------------------------------------------------
-    menu = ["Off","🔲 Life Expectancy-Regions","🔲 Info","🔲 Datasets"]
+    menu = [" ","🔲 Life Expectancy-Regions","🔲 Info","🔲 Datasets"]
     choice = st.sidebar.selectbox("🔺Proyeccion + Datasets (Semana 1)",menu)
     
-    if choice == "Off":
+    if choice == " ":
       st.title("")
     if choice == "🔲 Life Expectancy-Regions":
             st.title("[![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=35&pause=100000&color=F79213&width=435&lines=Life+Expectancy)](https://git.io/typing-svg)")
@@ -658,7 +698,7 @@ def main():
                 with nav3:    
                     submit_search = st.form_submit_button()
    
-    menu2 = ["Off","🔲 Series x Region"]
+    menu2 = [" ","🔲 Series x Region"]
     choice = st.sidebar.selectbox("🔺Graficas x Series",menu2)
     if choice == "🔲 Series x Region":
 
