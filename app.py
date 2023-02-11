@@ -11,8 +11,7 @@ from plotly.subplots import make_subplots
 from client import *
 import plotly.graph_objects as go
 import math
-from colorama import init,Fore,Style
-init()
+
 
 
 #API IMPORT -------------------------------------------------------------------------------------------------------------------
